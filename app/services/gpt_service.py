@@ -2,9 +2,6 @@ import os
 from openai import OpenAI
 from app.core import config
 
-# Ensure API key is loaded
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-
 # Initialize OpenAI client
 client = OpenAI(api_key=config.OPENAI_API_KEY)
 
@@ -19,7 +16,7 @@ def ask_gpt(prompt: str) -> str:
     )
     return response.choices[0].message.content
 
-def ask_gpt_stream(prompt: str, model: str = "gpt-4o-mini"):
+def ask_gpt_stream(prompt: str, model: str = config.NEXORA_GPT_MODEL):
     """
     Stream GPT response as a generator.
     """

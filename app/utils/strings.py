@@ -12,3 +12,5 @@ def extract_strings(content: bytes, min_length: int = 4):
     if len(current) >= min_length:
         result.append(current)
     return result
+
+
