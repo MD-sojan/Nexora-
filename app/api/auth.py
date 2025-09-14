@@ -10,7 +10,7 @@ from app.services.auth_service import (
  get_current_user
 )
 from app.core.db import users_collection
-from app.models.auth import User, UserInDB, Token
+from app.models.auth import User, UserInDB, Token, UserCreate
 
 router = APIRouter()
 

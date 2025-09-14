@@ -1,13 +1,13 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.api import chat, analyze, auth
-from app.db import connect_db
+from app.core.db import init_db
 
 # Initialize FastAPI
 app = FastAPI(title="Nexora Backend", version="1.0.0")
 
 # Connect to MongoDB
-connect_db()
+
 
 # Middleware
 app.add_middleware(

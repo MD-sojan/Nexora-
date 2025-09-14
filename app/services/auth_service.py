@@ -48,3 +48,7 @@ async def get_current_user(token: str = Depends(oauth2_scheme)) -> UserInDB:
     if not user_doc:
         raise credentials_exception
     return UserInDB(**user_doc)
+
+async def find_user_by_username(username: str):
+    user_doc = await users_collection.find_one({"username": username})
+    return UserInDB(**user_doc) if user_doc else None
